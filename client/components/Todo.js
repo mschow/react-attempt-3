@@ -5,8 +5,13 @@ const Todo = (props) => {
     textDecoration: props.completed ? 'line-through' : 'none',
     cursor: 'pointer'
   }
+
   return (
-    <span style={styles} onClick={() => props.onClick()}>{props.name}</span>
+    <div>
+      <span style={styles} onClick={props.onClick}>{props.name}</span>
+      &nbsp;
+      <button onClick={props.onDeleteClick}>X</button>
+    </div>
   )
 }
 
