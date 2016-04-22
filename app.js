@@ -6,6 +6,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
 import api from './routes'
+import serverRendered from './lib/server-rendered'
 
 mongoose.connect(config.get('mongoUrl'))
 
@@ -14,8 +15,8 @@ const PORT = config.port
 const PUBLIC_DIR = path.join(__dirname, 'public')
 
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded())
 app.use('/api', api)
+app.get('/', serverRendered)
 app.use(express.static(PUBLIC_DIR))
 
 app.use((err, req, res, next) => {
