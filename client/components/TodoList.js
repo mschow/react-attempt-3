@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Todo from './Todo'
+import styles from './TodoList.css'
 
 class TodoList extends React.Component {
 
@@ -10,12 +11,13 @@ class TodoList extends React.Component {
   }
 
   render() {
+    if (!this.props.todos.length) return null
     return (
-      <ul>
+      <ul className={styles.list}>
         {
           this.props.todos.map((todo) => {
             return (
-              <li key={todo.id}>
+              <li key={todo.id} className={styles.listItem}>
                 <Todo
                   name={todo.name}
                   completed={todo.completed}

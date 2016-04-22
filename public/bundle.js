@@ -29570,13 +29570,17 @@
 
 	var _AddTodoContainer2 = _interopRequireDefault(_AddTodoContainer);
 
-	var _FilteredTodoList = __webpack_require__(511);
+	var _FilteredTodoList = __webpack_require__(515);
 
 	var _FilteredTodoList2 = _interopRequireDefault(_FilteredTodoList);
 
-	var _Filters = __webpack_require__(514);
+	var _Filters = __webpack_require__(522);
 
 	var _Filters2 = _interopRequireDefault(_Filters);
+
+	var _App = __webpack_require__(529);
+
+	var _App2 = _interopRequireDefault(_App);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29600,7 +29604,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { className: _App2.default.app },
 	        _react2.default.createElement(_AddTodoContainer2.default, null),
 	        _react2.default.createElement(_Filters2.default, null),
 	        _react2.default.createElement(_FilteredTodoList2.default, null)
@@ -29629,7 +29633,7 @@
 
 	var _AddTodo2 = _interopRequireDefault(_AddTodo);
 
-	var _actions = __webpack_require__(491);
+	var _actions = __webpack_require__(495);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29661,6 +29665,10 @@
 	var _react = __webpack_require__(451);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _AddTodo = __webpack_require__(491);
+
+	var _AddTodo2 = _interopRequireDefault(_AddTodo);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29695,11 +29703,11 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'form',
-	        { onSubmit: this.handleSubmit },
-	        _react2.default.createElement('input', { ref: 'input' }),
+	        { className: _AddTodo2.default.form, onSubmit: this.handleSubmit },
+	        _react2.default.createElement('input', { className: _AddTodo2.default.input, ref: 'input', placeholder: 'What needs to get done?' }),
 	        _react2.default.createElement(
 	          'button',
-	          null,
+	          { className: _AddTodo2.default.submit },
 	          'Add Todo'
 	        )
 	      );
@@ -29715,13 +29723,365 @@
 /* 491 */
 /***/ function(module, exports, __webpack_require__) {
 
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(492);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(494)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]!./AddTodo.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]!./AddTodo.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 492 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(493)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".AddTodo__form__1tb3A {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n.AddTodo__input__1xymS {\r\n  font-size: 16px;\r\n  padding: 10px;\r\n  width: 200px;\r\n  border: 1px solid #ccc;\r\n  border-top-left-radius: 5px;\r\n  border-bottom-left-radius: 5px;\r\n}\r\n\r\n.AddTodo__submit__1qQFQ {\r\n  padding: 0 15px;\r\n  color: #fff;\r\n  font-size: 16px;\r\n  background-color: #05b0c6;\r\n  border: 0;\r\n  border-top-right-radius: 5px;\r\n  border-bottom-right-radius: 5px;\r\n}\r\n", "", {"version":3,"sources":["/./client/components/AddTodo.css"],"names":[],"mappings":"AAAA;EACE,cAAc;EACd,wBAAwB;CACzB;;AAED;EACE,gBAAgB;EAChB,cAAc;EACd,aAAa;EACb,uBAAuB;EACvB,4BAA4B;EAC5B,+BAA+B;CAChC;;AAED;EACE,gBAAgB;EAChB,YAAY;EACZ,gBAAgB;EAChB,0BAA0B;EAC1B,UAAU;EACV,6BAA6B;EAC7B,gCAAgC;CACjC","file":"AddTodo.css","sourcesContent":[".form {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n.input {\r\n  font-size: 16px;\r\n  padding: 10px;\r\n  width: 200px;\r\n  border: 1px solid #ccc;\r\n  border-top-left-radius: 5px;\r\n  border-bottom-left-radius: 5px;\r\n}\r\n\r\n.submit {\r\n  padding: 0 15px;\r\n  color: #fff;\r\n  font-size: 16px;\r\n  background-color: #05b0c6;\r\n  border: 0;\r\n  border-top-right-radius: 5px;\r\n  border-bottom-right-radius: 5px;\r\n}\r\n"],"sourceRoot":"webpack://"}]);
+
+	// exports
+	exports.locals = {
+		"form": "AddTodo__form__1tb3A",
+		"input": "AddTodo__input__1xymS",
+		"submit": "AddTodo__submit__1qQFQ"
+	};
+
+/***/ },
+/* 493 */
+/***/ function(module, exports) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	// css base code, injected by the css-loader
+	module.exports = function() {
+		var list = [];
+
+		// return the list of modules as css string
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+
+		// import a list of modules into the list
+		list.i = function(modules, mediaQuery) {
+			if(typeof modules === "string")
+				modules = [[null, modules, ""]];
+			var alreadyImportedModules = {};
+			for(var i = 0; i < this.length; i++) {
+				var id = this[i][0];
+				if(typeof id === "number")
+					alreadyImportedModules[id] = true;
+			}
+			for(i = 0; i < modules.length; i++) {
+				var item = modules[i];
+				// skip already imported module
+				// this implementation is not 100% perfect for weird media query combinations
+				//  when a module is imported multiple times with different media queries.
+				//  I hope this will never occur (Hey this way we have smaller bundles)
+				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if(mediaQuery && !item[2]) {
+						item[2] = mediaQuery;
+					} else if(mediaQuery) {
+						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+					}
+					list.push(item);
+				}
+			}
+		};
+		return list;
+	};
+
+
+/***/ },
+/* 494 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	var stylesInDom = {},
+		memoize = function(fn) {
+			var memo;
+			return function () {
+				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+				return memo;
+			};
+		},
+		isOldIE = memoize(function() {
+			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+		}),
+		getHeadElement = memoize(function () {
+			return document.head || document.getElementsByTagName("head")[0];
+		}),
+		singletonElement = null,
+		singletonCounter = 0,
+		styleElementsInsertedAtTop = [];
+
+	module.exports = function(list, options) {
+		if(false) {
+			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+		}
+
+		options = options || {};
+		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+		// tags it will allow on a page
+		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+
+		// By default, add <style> tags to the bottom of <head>.
+		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+
+		var styles = listToStyles(list);
+		addStylesToDom(styles, options);
+
+		return function update(newList) {
+			var mayRemove = [];
+			for(var i = 0; i < styles.length; i++) {
+				var item = styles[i];
+				var domStyle = stylesInDom[item.id];
+				domStyle.refs--;
+				mayRemove.push(domStyle);
+			}
+			if(newList) {
+				var newStyles = listToStyles(newList);
+				addStylesToDom(newStyles, options);
+			}
+			for(var i = 0; i < mayRemove.length; i++) {
+				var domStyle = mayRemove[i];
+				if(domStyle.refs === 0) {
+					for(var j = 0; j < domStyle.parts.length; j++)
+						domStyle.parts[j]();
+					delete stylesInDom[domStyle.id];
+				}
+			}
+		};
+	}
+
+	function addStylesToDom(styles, options) {
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			if(domStyle) {
+				domStyle.refs++;
+				for(var j = 0; j < domStyle.parts.length; j++) {
+					domStyle.parts[j](item.parts[j]);
+				}
+				for(; j < item.parts.length; j++) {
+					domStyle.parts.push(addStyle(item.parts[j], options));
+				}
+			} else {
+				var parts = [];
+				for(var j = 0; j < item.parts.length; j++) {
+					parts.push(addStyle(item.parts[j], options));
+				}
+				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+			}
+		}
+	}
+
+	function listToStyles(list) {
+		var styles = [];
+		var newStyles = {};
+		for(var i = 0; i < list.length; i++) {
+			var item = list[i];
+			var id = item[0];
+			var css = item[1];
+			var media = item[2];
+			var sourceMap = item[3];
+			var part = {css: css, media: media, sourceMap: sourceMap};
+			if(!newStyles[id])
+				styles.push(newStyles[id] = {id: id, parts: [part]});
+			else
+				newStyles[id].parts.push(part);
+		}
+		return styles;
+	}
+
+	function insertStyleElement(options, styleElement) {
+		var head = getHeadElement();
+		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+		if (options.insertAt === "top") {
+			if(!lastStyleElementInsertedAtTop) {
+				head.insertBefore(styleElement, head.firstChild);
+			} else if(lastStyleElementInsertedAtTop.nextSibling) {
+				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+			} else {
+				head.appendChild(styleElement);
+			}
+			styleElementsInsertedAtTop.push(styleElement);
+		} else if (options.insertAt === "bottom") {
+			head.appendChild(styleElement);
+		} else {
+			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+		}
+	}
+
+	function removeStyleElement(styleElement) {
+		styleElement.parentNode.removeChild(styleElement);
+		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+		if(idx >= 0) {
+			styleElementsInsertedAtTop.splice(idx, 1);
+		}
+	}
+
+	function createStyleElement(options) {
+		var styleElement = document.createElement("style");
+		styleElement.type = "text/css";
+		insertStyleElement(options, styleElement);
+		return styleElement;
+	}
+
+	function createLinkElement(options) {
+		var linkElement = document.createElement("link");
+		linkElement.rel = "stylesheet";
+		insertStyleElement(options, linkElement);
+		return linkElement;
+	}
+
+	function addStyle(obj, options) {
+		var styleElement, update, remove;
+
+		if (options.singleton) {
+			var styleIndex = singletonCounter++;
+			styleElement = singletonElement || (singletonElement = createStyleElement(options));
+			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+		} else if(obj.sourceMap &&
+			typeof URL === "function" &&
+			typeof URL.createObjectURL === "function" &&
+			typeof URL.revokeObjectURL === "function" &&
+			typeof Blob === "function" &&
+			typeof btoa === "function") {
+			styleElement = createLinkElement(options);
+			update = updateLink.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+				if(styleElement.href)
+					URL.revokeObjectURL(styleElement.href);
+			};
+		} else {
+			styleElement = createStyleElement(options);
+			update = applyToTag.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+			};
+		}
+
+		update(obj);
+
+		return function updateStyle(newObj) {
+			if(newObj) {
+				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+					return;
+				update(obj = newObj);
+			} else {
+				remove();
+			}
+		};
+	}
+
+	var replaceText = (function () {
+		var textStore = [];
+
+		return function (index, replacement) {
+			textStore[index] = replacement;
+			return textStore.filter(Boolean).join('\n');
+		};
+	})();
+
+	function applyToSingletonTag(styleElement, index, remove, obj) {
+		var css = remove ? "" : obj.css;
+
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = replaceText(index, css);
+		} else {
+			var cssNode = document.createTextNode(css);
+			var childNodes = styleElement.childNodes;
+			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+			if (childNodes.length) {
+				styleElement.insertBefore(cssNode, childNodes[index]);
+			} else {
+				styleElement.appendChild(cssNode);
+			}
+		}
+	}
+
+	function applyToTag(styleElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+
+		if(media) {
+			styleElement.setAttribute("media", media)
+		}
+
+		if(styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = css;
+		} else {
+			while(styleElement.firstChild) {
+				styleElement.removeChild(styleElement.firstChild);
+			}
+			styleElement.appendChild(document.createTextNode(css));
+		}
+	}
+
+	function updateLink(linkElement, obj) {
+		var css = obj.css;
+		var sourceMap = obj.sourceMap;
+
+		if(sourceMap) {
+			// http://stackoverflow.com/a/26603875
+			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+		}
+
+		var blob = new Blob([css], { type: "text/css" });
+
+		var oldSrc = linkElement.href;
+
+		linkElement.href = URL.createObjectURL(blob);
+
+		if(oldSrc)
+			URL.revokeObjectURL(oldSrc);
+	}
+
+
+/***/ },
+/* 495 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 
-	var _todos = __webpack_require__(492);
+	var _todos = __webpack_require__(496);
 
 	Object.keys(_todos).forEach(function (key) {
 	  if (key === "default") return;
@@ -29733,7 +30093,7 @@
 	  });
 	});
 
-	var _filter = __webpack_require__(510);
+	var _filter = __webpack_require__(514);
 
 	Object.keys(_filter).forEach(function (key) {
 	  if (key === "default") return;
@@ -29746,7 +30106,7 @@
 	});
 
 /***/ },
-/* 492 */
+/* 496 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29756,7 +30116,7 @@
 	});
 	exports.clearCompletedTodos = exports.deleteTodo = exports.updateTodo = exports.listTodos = exports.createTodo = undefined;
 
-	var _axios = __webpack_require__(493);
+	var _axios = __webpack_require__(497);
 
 	var _axios2 = _interopRequireDefault(_axios);
 
@@ -29899,25 +30259,25 @@
 	};
 
 /***/ },
-/* 493 */
+/* 497 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(494);
+	module.exports = __webpack_require__(498);
 
 /***/ },
-/* 494 */
+/* 498 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var defaults = __webpack_require__(495);
-	var utils = __webpack_require__(496);
-	var dispatchRequest = __webpack_require__(497);
-	var InterceptorManager = __webpack_require__(505);
-	var isAbsoluteURL = __webpack_require__(506);
-	var combineURLs = __webpack_require__(507);
-	var bind = __webpack_require__(508);
-	var transformData = __webpack_require__(501);
+	var defaults = __webpack_require__(499);
+	var utils = __webpack_require__(500);
+	var dispatchRequest = __webpack_require__(501);
+	var InterceptorManager = __webpack_require__(509);
+	var isAbsoluteURL = __webpack_require__(510);
+	var combineURLs = __webpack_require__(511);
+	var bind = __webpack_require__(512);
+	var transformData = __webpack_require__(505);
 
 	function Axios(defaultConfig) {
 	  this.defaults = utils.merge({}, defaultConfig);
@@ -30002,7 +30362,7 @@
 	axios.all = function all(promises) {
 	  return Promise.all(promises);
 	};
-	axios.spread = __webpack_require__(509);
+	axios.spread = __webpack_require__(513);
 
 	// Provide aliases for supported request methods
 	utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
@@ -30030,12 +30390,12 @@
 
 
 /***/ },
-/* 495 */
+/* 499 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(496);
+	var utils = __webpack_require__(500);
 
 	var PROTECTION_PREFIX = /^\)\]\}',?\n/;
 	var DEFAULT_CONTENT_TYPE = {
@@ -30101,7 +30461,7 @@
 
 
 /***/ },
-/* 496 */
+/* 500 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -30351,7 +30711,7 @@
 
 
 /***/ },
-/* 497 */
+/* 501 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -30373,10 +30733,10 @@
 	        adapter = config.adapter;
 	      } else if (typeof XMLHttpRequest !== 'undefined') {
 	        // For browsers use XHR adapter
-	        adapter = __webpack_require__(498);
+	        adapter = __webpack_require__(502);
 	      } else if (typeof process !== 'undefined') {
 	        // For node use HTTP adapter
-	        adapter = __webpack_require__(498);
+	        adapter = __webpack_require__(502);
 	      }
 
 	      if (typeof adapter === 'function') {
@@ -30392,17 +30752,17 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(288)))
 
 /***/ },
-/* 498 */
+/* 502 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
-	var utils = __webpack_require__(496);
-	var buildURL = __webpack_require__(499);
-	var parseHeaders = __webpack_require__(500);
-	var transformData = __webpack_require__(501);
-	var isURLSameOrigin = __webpack_require__(502);
-	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(503);
+	var utils = __webpack_require__(500);
+	var buildURL = __webpack_require__(503);
+	var parseHeaders = __webpack_require__(504);
+	var transformData = __webpack_require__(505);
+	var isURLSameOrigin = __webpack_require__(506);
+	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(507);
 
 	module.exports = function xhrAdapter(resolve, reject, config) {
 	  var requestData = config.data;
@@ -30505,7 +30865,7 @@
 	  // This is only done if running in a standard browser environment.
 	  // Specifically not if we're in a web worker, or react-native.
 	  if (utils.isStandardBrowserEnv()) {
-	    var cookies = __webpack_require__(504);
+	    var cookies = __webpack_require__(508);
 
 	    // Add xsrf header
 	    var xsrfValue = config.withCredentials || isURLSameOrigin(config.url) ?
@@ -30571,12 +30931,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(288)))
 
 /***/ },
-/* 499 */
+/* 503 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(496);
+	var utils = __webpack_require__(500);
 
 	function encode(val) {
 	  return encodeURIComponent(val).
@@ -30644,12 +31004,12 @@
 
 
 /***/ },
-/* 500 */
+/* 504 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(496);
+	var utils = __webpack_require__(500);
 
 	/**
 	 * Parse headers into an object
@@ -30687,12 +31047,12 @@
 
 
 /***/ },
-/* 501 */
+/* 505 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(496);
+	var utils = __webpack_require__(500);
 
 	/**
 	 * Transform the data for a request or a response
@@ -30713,12 +31073,12 @@
 
 
 /***/ },
-/* 502 */
+/* 506 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(496);
+	var utils = __webpack_require__(500);
 
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -30787,7 +31147,7 @@
 
 
 /***/ },
-/* 503 */
+/* 507 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -30829,12 +31189,12 @@
 
 
 /***/ },
-/* 504 */
+/* 508 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(496);
+	var utils = __webpack_require__(500);
 
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -30888,12 +31248,12 @@
 
 
 /***/ },
-/* 505 */
+/* 509 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(496);
+	var utils = __webpack_require__(500);
 
 	function InterceptorManager() {
 	  this.handlers = [];
@@ -30946,7 +31306,7 @@
 
 
 /***/ },
-/* 506 */
+/* 510 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -30966,7 +31326,7 @@
 
 
 /***/ },
-/* 507 */
+/* 511 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -30984,7 +31344,7 @@
 
 
 /***/ },
-/* 508 */
+/* 512 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -31001,7 +31361,7 @@
 
 
 /***/ },
-/* 509 */
+/* 513 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -31034,7 +31394,7 @@
 
 
 /***/ },
-/* 510 */
+/* 514 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -31050,7 +31410,7 @@
 	};
 
 /***/ },
-/* 511 */
+/* 515 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31061,11 +31421,11 @@
 
 	var _reactRedux = __webpack_require__(457);
 
-	var _TodoList = __webpack_require__(512);
+	var _TodoList = __webpack_require__(516);
 
 	var _TodoList2 = _interopRequireDefault(_TodoList);
 
-	var _actions = __webpack_require__(491);
+	var _actions = __webpack_require__(495);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31107,7 +31467,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_TodoList2.default);
 
 /***/ },
-/* 512 */
+/* 516 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31122,9 +31482,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Todo = __webpack_require__(513);
+	var _Todo = __webpack_require__(517);
 
 	var _Todo2 = _interopRequireDefault(_Todo);
+
+	var _TodoList = __webpack_require__(520);
+
+	var _TodoList2 = _interopRequireDefault(_TodoList);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31153,13 +31517,14 @@
 	    value: function render() {
 	      var _this2 = this;
 
+	      if (!this.props.todos.length) return null;
 	      return _react2.default.createElement(
 	        'ul',
-	        null,
+	        { className: _TodoList2.default.list },
 	        this.props.todos.map(function (todo) {
 	          return _react2.default.createElement(
 	            'li',
-	            { key: todo.id },
+	            { key: todo.id, className: _TodoList2.default.listItem },
 	            _react2.default.createElement(_Todo2.default, {
 	              name: todo.name,
 	              completed: todo.completed,
@@ -31182,7 +31547,7 @@
 	exports.default = TodoList;
 
 /***/ },
-/* 513 */
+/* 517 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31195,35 +31560,126 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _Todo = __webpack_require__(518);
+
+	var _Todo2 = _interopRequireDefault(_Todo);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Todo = function Todo(props) {
-	  var styles = {
-	    textDecoration: props.completed ? 'line-through' : 'none',
-	    cursor: 'pointer'
-	  };
+	  var todoClasses = [_Todo2.default.todo];
+	  if (props.completed) todoClasses.push(_Todo2.default.completed);
 
 	  return _react2.default.createElement(
 	    'div',
-	    null,
+	    { className: todoClasses.join(' ') },
 	    _react2.default.createElement(
 	      'span',
-	      { style: styles, onClick: props.onClick },
+	      { className: _Todo2.default.todoText, onClick: props.onClick },
 	      props.name
 	    ),
 	    ' ',
 	    _react2.default.createElement(
 	      'button',
-	      { onClick: props.onDeleteClick },
+	      { className: _Todo2.default.deleteButton, onClick: props.onDeleteClick },
 	      'X'
 	    )
 	  );
 	};
 
 	exports.default = Todo;
+	exports.default = Todo;
 
 /***/ },
-/* 514 */
+/* 518 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(519);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(494)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]!./Todo.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]!./Todo.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 519 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(493)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".Todo__todo__orzqL {\r\n  width: 100%;\r\n  font-family: sans-serif;\r\n  padding: 10px;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.Todo__todoText__37a_t {\r\n  cursor: pointer;\r\n}\r\n\r\n.Todo__todo__orzqL.Todo__completed__1jJov {\r\n  text-decoration: line-through;\r\n}\r\n\r\n.Todo__deleteButton__3TIg7 {\r\n  background-color: #ff4949;\r\n  color: #fff;\r\n  font-weight: bold;\r\n  border: 0;\r\n  border-radius: 3px;\r\n  cursor: pointer;\r\n  float: right;\r\n}\r\n", "", {"version":3,"sources":["/./client/components/Todo.css"],"names":[],"mappings":"AAAA;EACE,YAAY;EACZ,wBAAwB;EACxB,cAAc;EACd,uBAAuB;CACxB;;AAED;EACE,gBAAgB;CACjB;;AAED;EACE,8BAA8B;CAC/B;;AAED;EACE,0BAA0B;EAC1B,YAAY;EACZ,kBAAkB;EAClB,UAAU;EACV,mBAAmB;EACnB,gBAAgB;EAChB,aAAa;CACd","file":"Todo.css","sourcesContent":[".todo {\r\n  width: 100%;\r\n  font-family: sans-serif;\r\n  padding: 10px;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.todoText {\r\n  cursor: pointer;\r\n}\r\n\r\n.todo.completed {\r\n  text-decoration: line-through;\r\n}\r\n\r\n.deleteButton {\r\n  background-color: #ff4949;\r\n  color: #fff;\r\n  font-weight: bold;\r\n  border: 0;\r\n  border-radius: 3px;\r\n  cursor: pointer;\r\n  float: right;\r\n}\r\n"],"sourceRoot":"webpack://"}]);
+
+	// exports
+	exports.locals = {
+		"todo": "Todo__todo__orzqL",
+		"todoText": "Todo__todoText__37a_t",
+		"completed": "Todo__completed__1jJov",
+		"deleteButton": "Todo__deleteButton__3TIg7"
+	};
+
+/***/ },
+/* 520 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(521);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(494)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]!./TodoList.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]!./TodoList.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 521 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(493)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".TodoList__list__1LzGu {\r\n  padding: 0;\r\n  margin: 0;\r\n  list-style: none;\r\n  background-color: #f9f9f9;\r\n  border: 1px solid #eee;\r\n  border-radius: 5px;\r\n}\r\n\r\n.TodoList__listItem__2yaGh {\r\n  border-bottom: 1px solid #eee;\r\n}\r\n\r\n.TodoList__listItem__2yaGh:last-child {\r\n  border-bottom: 0;\r\n}\r\n", "", {"version":3,"sources":["/./client/components/TodoList.css"],"names":[],"mappings":"AAAA;EACE,WAAW;EACX,UAAU;EACV,iBAAiB;EACjB,0BAA0B;EAC1B,uBAAuB;EACvB,mBAAmB;CACpB;;AAED;EACE,8BAA8B;CAC/B;;AAED;EACE,iBAAiB;CAClB","file":"TodoList.css","sourcesContent":[".list {\r\n  padding: 0;\r\n  margin: 0;\r\n  list-style: none;\r\n  background-color: #f9f9f9;\r\n  border: 1px solid #eee;\r\n  border-radius: 5px;\r\n}\r\n\r\n.listItem {\r\n  border-bottom: 1px solid #eee;\r\n}\r\n\r\n.listItem:last-child {\r\n  border-bottom: 0;\r\n}\r\n"],"sourceRoot":"webpack://"}]);
+
+	// exports
+	exports.locals = {
+		"list": "TodoList__list__1LzGu",
+		"listItem": "TodoList__listItem__2yaGh"
+	};
+
+/***/ },
+/* 522 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31238,9 +31694,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _FilterLink = __webpack_require__(515);
+	var _FilterLink = __webpack_require__(523);
 
 	var _FilterLink2 = _interopRequireDefault(_FilterLink);
+
+	var _Filters = __webpack_require__(527);
+
+	var _Filters2 = _interopRequireDefault(_Filters);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31264,7 +31724,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { className: _Filters2.default.filters },
 	        _react2.default.createElement(_FilterLink2.default, { label: 'All', filter: 'ALL' }),
 	        _react2.default.createElement(_FilterLink2.default, { label: 'Active', filter: 'ACTIVE' }),
 	        _react2.default.createElement(_FilterLink2.default, { label: 'Completed', filter: 'COMPLETED' })
@@ -31278,7 +31738,7 @@
 	exports.default = Filters;
 
 /***/ },
-/* 515 */
+/* 523 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31289,11 +31749,11 @@
 
 	var _reactRedux = __webpack_require__(457);
 
-	var _ToggleButton = __webpack_require__(516);
+	var _ToggleButton = __webpack_require__(524);
 
 	var _ToggleButton2 = _interopRequireDefault(_ToggleButton);
 
-	var _actions = __webpack_require__(491);
+	var _actions = __webpack_require__(495);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31314,7 +31774,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_ToggleButton2.default);
 
 /***/ },
-/* 516 */
+/* 524 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31328,6 +31788,10 @@
 	var _react = __webpack_require__(451);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _ToggleButton = __webpack_require__(525);
+
+	var _ToggleButton2 = _interopRequireDefault(_ToggleButton);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31353,16 +31817,15 @@
 	      var label = _props.label;
 	      var onClick = _props.onClick;
 	      var active = _props.active;
-	      var styles = _props.styles;
 
+	      // We do the same sore of thing here that we did with our Todo component.
 
-	      styles = Object.assign({
-	        backgroundColor: active ? 'white' : 'gray'
-	      }, styles);
+	      var classes = [_ToggleButton2.default.toggle];
+	      if (active) classes.push(_ToggleButton2.default.active);
 
 	      return _react2.default.createElement(
 	        'button',
-	        { style: styles, onClick: onClick },
+	        { className: classes.join(' '), onClick: onClick },
 	        label
 	      );
 	    }
@@ -31372,6 +31835,133 @@
 	}(_react2.default.Component);
 
 	exports.default = ToggleButton;
+
+/***/ },
+/* 525 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(526);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(494)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]!./ToggleButton.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]!./ToggleButton.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 526 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(493)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".ToggleButton__toggle__1occ8 {\r\n  border: 0;\r\n  background-color: rgba(0, 0, 0, 0);\r\n  font-family: sans-serif;\r\n  font-size: 16px;\r\n  cursor: pointer;\r\n  padding: 10px 5px;\r\n}\r\n\r\n.ToggleButton__toggle__1occ8::after {\r\n  content: \"|\";\r\n  margin-left: 10px;\r\n  text-decoration: none;\r\n  display: inline-block;\r\n}\r\n\r\n.ToggleButton__toggle__1occ8:last-child::after {\r\n  display: none\r\n}\r\n\r\n.ToggleButton__toggle__1occ8.ToggleButton__active__1CAa_ {\r\n  text-decoration: underline;\r\n}\r\n", "", {"version":3,"sources":["/./client/components/ToggleButton.css"],"names":[],"mappings":"AAAA;EACE,UAAU;EACV,mCAAmC;EACnC,wBAAwB;EACxB,gBAAgB;EAChB,gBAAgB;EAChB,kBAAkB;CACnB;;AAED;EACE,aAAa;EACb,kBAAkB;EAClB,sBAAsB;EACtB,sBAAsB;CACvB;;AAED;EACE,aAAa;CACd;;AAED;EACE,2BAA2B;CAC5B","file":"ToggleButton.css","sourcesContent":[".toggle {\r\n  border: 0;\r\n  background-color: rgba(0, 0, 0, 0);\r\n  font-family: sans-serif;\r\n  font-size: 16px;\r\n  cursor: pointer;\r\n  padding: 10px 5px;\r\n}\r\n\r\n.toggle::after {\r\n  content: \"|\";\r\n  margin-left: 10px;\r\n  text-decoration: none;\r\n  display: inline-block;\r\n}\r\n\r\n.toggle:last-child::after {\r\n  display: none\r\n}\r\n\r\n.toggle.active {\r\n  text-decoration: underline;\r\n}\r\n"],"sourceRoot":"webpack://"}]);
+
+	// exports
+	exports.locals = {
+		"toggle": "ToggleButton__toggle__1occ8",
+		"active": "ToggleButton__active__1CAa_"
+	};
+
+/***/ },
+/* 527 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(528);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(494)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]!./Filters.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]!./Filters.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 528 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(493)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".Filters__filters__3Hgsd {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n", "", {"version":3,"sources":["/./client/components/Filters.css"],"names":[],"mappings":"AAAA;EACE,cAAc;EACd,wBAAwB;CACzB","file":"Filters.css","sourcesContent":[".filters {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n"],"sourceRoot":"webpack://"}]);
+
+	// exports
+	exports.locals = {
+		"filters": "Filters__filters__3Hgsd"
+	};
+
+/***/ },
+/* 529 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(530);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(494)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]!./App.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]!./App.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 530 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(493)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".App__app__1uqvi {\r\n  max-width: 350px;\r\n  margin: auto;\r\n  padding: 15px;\r\n}\r\n", "", {"version":3,"sources":["/./client/components/App.css"],"names":[],"mappings":"AAAA;EACE,iBAAiB;EACjB,aAAa;EACb,cAAc;CACf","file":"App.css","sourcesContent":[".app {\r\n  max-width: 350px;\r\n  margin: auto;\r\n  padding: 15px;\r\n}\r\n"],"sourceRoot":"webpack://"}]);
+
+	// exports
+	exports.locals = {
+		"app": "App__app__1uqvi"
+	};
 
 /***/ }
 /******/ ]);
