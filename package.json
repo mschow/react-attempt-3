@@ -4,10 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
     "start": "node init",
+    "startdev": "babel-node app",
     "watch": "nodemon init",
-    "build": "webpack"
+    "build-watch": "webpack-dev-server --inline --content-base public/",
+    "all": "npm run watch & npm run build-watch",
+    "build": "webpack",
+    "test": "NODE_ENV=test mocha"
   },
   "repository": {
     "type": "git",
@@ -27,6 +30,7 @@
     "body-parser": "^1.15.0",
     "config": "^1.20.1",
     "express": "^4.13.4",
+    "mongoose": "^4.4.13",
     "react-redux": "^4.4.5",
     "redux": "^3.5.1",
     "redux-thunk": "^2.0.1"
