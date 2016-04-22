@@ -9,7 +9,7 @@
     "watch": "nodemon init",
     "build-watch": "webpack-dev-server --inline --content-base public/",
     "all": "npm run watch & npm run build-watch",
-    "build": "webpack",
+    "build": "NODE_ENV=production webpack",
     "test": "NODE_ENV=test mocha"
   },
   "repository": {
@@ -41,11 +41,13 @@
     "bluebird": "^3.3.5",
     "chai": "^3.5.0",
     "css-loader": "^0.23.1",
+    "envify": "^3.4.0",
     "mocha": "^2.4.5",
     "nodemon": "^1.9.1",
     "style-loader": "^0.13.1",
     "supertest": "^1.2.0",
     "supertest-as-promised": "^3.1.0",
+    "transform-loader": "^0.2.3",
     "webpack": "^1.13.0"
   }
 }

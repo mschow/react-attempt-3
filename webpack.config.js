@@ -28,7 +28,19 @@ module.exports = {
           'localIdentName=[name]__[local]__[hash:base64:5]'
         ].join('&')}`,
         exclude: /node_modules/
+      },
+      {
+        test: /\.js$/,
+        loader: 'transform?envify'
       }
     ]
   }
+}
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports.plugins.push(new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      warnings: false
+    }
+  }))
 }
