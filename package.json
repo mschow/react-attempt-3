@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node init",
-    "watch": "nodemon init"
+    "watch": "nodemon init",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,11 @@
     "express": "^4.13.4"
   },
   "devDependencies": {
-    "nodemon": "^1.9.1"
+    "babel-loader": "^6.2.4",
+    "babel-preset-react": "^6.5.0",
+    "nodemon": "^1.9.1",
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "webpack": "^1.13.0"
   }
 }
