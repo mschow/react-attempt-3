@@ -11,6 +11,10 @@ module.exports = {
   module: {
     loaders: [
       {
+        test: /\.js$/,
+        loader: 'transform?envify'
+      },
+      {
         test: /\.js$/, // Telling webpack to use files that match this pattern
         loader: 'babel', // Uses the module `babel-loader`
         exclude: /node_modules/, // Don't transpile modules in the `node_modules/` directory
@@ -31,4 +35,12 @@ module.exports = {
       }
     ]
   }
+}
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports.plugins.push(new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      warnings: false
+    }
+  }))
 }
