@@ -27025,7 +27025,7 @@
 	    { store: (0, _store2.default)(initialState) },
 	    _react2.default.createElement(_App2.default, null)
 	  );
-	}; // This is the file we just created above
+	};
 
 /***/ },
 /* 451 */
